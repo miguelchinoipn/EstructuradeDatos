@@ -184,6 +184,7 @@ struct Arbol *EliminarElemento(struct Arbol *raiz, int dato)
 			else if(dato < actual -> dato)
 				actual = actual -> izq;
 		}
+	//return raiz;
 
 	}
 }
