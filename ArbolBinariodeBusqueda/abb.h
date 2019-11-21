@@ -13,9 +13,9 @@ struct ArbolBB{
 struct ArbolBB *AgregarElemento(struct ArbolBB *, int dato);
 struct ArbolBB *EliminarElemento(struct ArbolBB *, int dato);
 void BuscarElemento(struct ArbolBB *,int dato);
-void PRE(struct ArbolBB *);
-void IN(struct ArbolBB *);
-void POST(struct ArbolBB *);
+void PreOrden(struct ArbolBB *);
+void InOrden(struct ArbolBB *);
+void PostOrden(struct ArbolBB *);
 int EsHoja(struct ArbolBB *);
 int Vacio(struct ArbolBB *);
 
