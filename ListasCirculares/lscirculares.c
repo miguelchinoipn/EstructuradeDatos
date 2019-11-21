@@ -1,16 +1,16 @@
 #include"lscirculares.h"
 
-struct Lista *
-agregarElemento (struct Lista *lista, int dato)
+struct ListaCircular *
+agregarElemento (struct ListaCircular *lista, int dato)
 {
   //Agrega elementos al final de la lista
 
-  struct Lista *aux;
-  struct Lista *fin;
+  struct ListaCircular *aux;
+  struct ListaCircular *fin;
 
-  struct Lista *nuevo = NULL;
+  struct ListaCircular *nuevo = NULL;
 
-  nuevo = (struct Lista *) malloc (sizeof (struct Lista));
+  nuevo = (struct ListaCircular *) malloc (sizeof (struct ListaCircular));
 
   nuevo->dato = dato;
 
@@ -37,9 +37,9 @@ agregarElemento (struct Lista *lista, int dato)
 }
 
 void
-mostrarLista (struct Lista *lista)
+mostrarLista (struct ListaCircular *lista)
 {
-  struct Lista *aux;
+  struct ListaCircular *aux;
   aux = lista;
 
   if (aux == NULL)
@@ -62,10 +62,10 @@ mostrarLista (struct Lista *lista)
 }
 
 void
-mostrarInversa (struct Lista *lista)
+mostrarInversa (struct ListaCircular *lista)
 {
-  struct Lista *aux;
-  struct Lista *fin;
+  struct ListaCircular *aux;
+  struct ListaCircular *fin;
   fin = lista;
   fin = fin->siguiente;
   while (fin->siguiente != lista)
@@ -86,13 +86,13 @@ mostrarInversa (struct Lista *lista)
     }
 }
 
-struct Lista *
-mezclarListas (struct Lista *lista1, struct Lista *lista2)
+struct ListaCircular *
+mezclarListas (struct ListaCircular *lista1, struct ListaCircular *lista2)
 {
 
-  struct Lista *ListaMezclada = NULL;
-  struct Lista *fin1;
-  struct Lista *fin2;
+  struct ListaCircular *ListaMezclada = NULL;
+  struct ListaCircular *fin1;
+  struct ListaCircular *fin2;
   int band = 1;
   int band2 = 1;
   int count1 = 0, count2 = 0;
@@ -161,11 +161,11 @@ mezclarListas (struct Lista *lista1, struct Lista *lista2)
   return ListaMezclada;
 }
 
-struct Lista *
-eliminarCola (struct Lista *lista)
+struct ListaCircular *
+eliminarCola (struct ListaCircular *lista)
 {
-  struct Lista *aux;
-  struct Lista *fin;
+  struct ListaCircular *aux;
+  struct ListaCircular *fin;
   fin = lista;
   fin = fin->siguiente;
   while (fin->siguiente != lista)
@@ -184,12 +184,12 @@ eliminarCola (struct Lista *lista)
   return lista;
 }
 
-struct Lista *
-eliminarCabeza (struct Lista *lista)
+struct ListaCircular *
+eliminarCabeza (struct ListaCircular *lista)
 {
-  struct Lista *aux;
+  struct ListaCircular *aux;
 
-  struct Lista *fin;
+  struct ListaCircular *fin;
   fin = lista;
   fin = fin->siguiente;
   while (fin->siguiente != lista)
@@ -204,9 +204,9 @@ eliminarCabeza (struct Lista *lista)
 }
 
 int
-buscarElemento (struct Lista *lista, int dato)
+buscarElemento (struct ListaCircular *lista, int dato)
 {
-  struct Lista *fin;
+  struct ListaCircular *fin;
   fin = lista;
   fin = fin->siguiente;
   while (fin != lista)
@@ -220,12 +220,12 @@ buscarElemento (struct Lista *lista, int dato)
   return 0;
 }
 
-struct Lista *
-buscarEliminar (struct Lista *lista, int dato)
+struct ListaCircular *
+buscarEliminar (struct ListaCircular *lista, int dato)
 {
-  struct Lista *fin;
-  struct Lista *aux;
-  struct Lista *aux2;
+  struct ListaCircular *fin;
+  struct ListaCircular *aux;
+  struct ListaCircular *aux2;
   aux2 = lista;
   fin = lista;
   fin = fin->siguiente;
@@ -249,12 +249,12 @@ buscarEliminar (struct Lista *lista, int dato)
   return lista;
 }
 
-struct Lista *
-eliminarLista (struct Lista *lista)
+struct ListaCircular *
+eliminarLista (struct ListaCircular *lista)
 {
-  struct Lista *fin;
-  struct Lista *aux;
-  struct Lista *aux2;
+  struct ListaCircular *fin;
+  struct ListaCircular *aux;
+  struct ListaCircular *aux2;
   aux = lista;
   fin = lista;
   while (fin->siguiente != lista)
