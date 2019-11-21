@@ -1,14 +1,14 @@
 #include"lsdobles.h"
 
-struct Lista *
-agregarElemento (struct Lista *lista, int dato)
+struct ListaDoble *
+agregarElemento (struct ListaDoble *lista, int dato)
 {
 
   //Agrega elementos al final de la lista
-  struct Lista *aux;
-  struct Lista *nuevo = NULL;
+  struct ListaDoble *aux;
+  struct ListaDoble *nuevo = NULL;
   
-  nuevo = (struct Lista *) malloc (sizeof (struct Lista));
+  nuevo = (struct ListaDoble *) malloc (sizeof (struct ListaDoble));
   nuevo->dato = dato;
   nuevo->siguiente = NULL;
 
@@ -33,14 +33,14 @@ agregarElemento (struct Lista *lista, int dato)
   return lista;
 }
 
-/*struct Lista *
-agregarElemento (struct Lista *lista, int dato) 
+/*struct ListaDoble *
+agregarElemento (struct ListaDoble *lista, int dato) 
 {
   
     //Agrega elementos al inicio de la lista
-  struct Lista *nuevo = NULL;
+  struct ListaDoble *nuevo = NULL;
   
-nuevo = (struct Lista *) malloc (sizeof (struct Lista));
+nuevo = (struct ListaDoble *) malloc (sizeof (struct ListaDoble));
   
 if (nuevo == NULL)
     {
@@ -75,7 +75,7 @@ return nuevo;
 
 
 void
-mostrarLista (struct Lista *lista)
+mostrarLista (struct ListaDoble *lista)
 {
   while (lista != NULL)
   {
@@ -85,10 +85,10 @@ mostrarLista (struct Lista *lista)
 }
 
 
-struct Lista *
-mezclarListas (struct Lista *lista1, struct Lista *lista2)
+struct ListaDoble *
+mezclarListas (struct ListaDoble *lista1, struct ListaDoble *lista2)
 {
-  struct Lista *ListaMezclada = NULL;
+  struct ListaDoble *ListaMezclada = NULL;
 
   while (lista1 != NULL || lista2 != NULL)
   {
@@ -109,10 +109,10 @@ mezclarListas (struct Lista *lista1, struct Lista *lista2)
 
 
 void
-mostrarInversa (struct Lista *lista)
+mostrarInversa (struct ListaDoble *lista)
 {
 
-  struct Lista *aux = NULL;
+  struct ListaDoble *aux = NULL;
   aux = lista;
   while (aux->siguiente != NULL)
   {
@@ -127,13 +127,13 @@ mostrarInversa (struct Lista *lista)
 }
 
 
-struct Lista *
-eliminarCola (struct Lista *lista)
+struct ListaDoble *
+eliminarCola (struct ListaDoble *lista)
 {
 
-  struct Lista *aux = NULL;
-  struct Lista *aux2 = NULL;
-  struct Lista *aux3 = NULL;
+  struct ListaDoble *aux = NULL;
+  struct ListaDoble *aux2 = NULL;
+  struct ListaDoble *aux3 = NULL;
 
   aux3 = lista;
   aux2 = lista;
@@ -164,10 +164,10 @@ eliminarCola (struct Lista *lista)
 }
 
 
-struct Lista *
-eliminarCabeza (struct Lista *lista)
+struct ListaDoble *
+eliminarCabeza (struct ListaDoble *lista)
 {
-  struct Lista *aux = NULL;
+  struct ListaDoble *aux = NULL;
 
   aux = lista;
   lista = lista->siguiente;
@@ -179,11 +179,11 @@ eliminarCabeza (struct Lista *lista)
 }
 
 
-struct Lista *
-eliminarLista (struct Lista *lista)
+struct ListaDoble *
+eliminarLista (struct ListaDoble *lista)
 {
 
-  struct Lista *aux = NULL;
+  struct ListaDoble *aux = NULL;
   aux = lista;
 
   while (lista != NULL)
@@ -197,10 +197,10 @@ return lista;
 
 
 int
-buscarElemento (struct Lista *lista, int dato)
+buscarElemento (struct ListaDoble *lista, int dato)
 {
 
-  struct Lista *aux = NULL;
+  struct ListaDoble *aux = NULL;
   int band = 0;
 
   aux = lista;
@@ -225,12 +225,12 @@ buscarElemento (struct Lista *lista, int dato)
 }
 
 
-struct Lista *
-buscarEliminar (struct Lista *lista, int dato)
+struct ListaDoble *
+buscarEliminar (struct ListaDoble *lista, int dato)
 {
 
-  struct Lista *aux = NULL;
-  struct Lista *aux2 = NULL;
+  struct ListaDoble *aux = NULL;
+  struct ListaDoble *aux2 = NULL;
 
   int band = 0;
   aux = lista;
