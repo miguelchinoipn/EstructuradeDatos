@@ -51,7 +51,7 @@ main (void)
 //Buscamos Un Dato:
   scanf ("%d", &max);
   busqueda = buscarElemento (lista3, max);
-  printf("Si es 1 se encontro, si es 0, no se pudo encontrar: %d\n\n",buscador);
+  printf("Si es 1 se encontro, si es 0, no se pudo encontrar: %d\n\n",busqueda);
   
   printf ("\n\n");
 
