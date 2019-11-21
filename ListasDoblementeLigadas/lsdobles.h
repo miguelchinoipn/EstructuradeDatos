@@ -4,21 +4,21 @@
 #include<stdio.h>
 #include <stdlib.h>
 
-struct Lista
+struct ListaDoble
 {
   int dato;
-  struct Lista *siguiente;
-  struct Lista *anterior;
+  struct ListaDoble *siguiente;
+  struct ListaDoble *anterior;
 };
 
-struct Lista *agregarElemento (struct Lista *, int);
-struct Lista *mezclarListas (struct Lista *, struct Lista *);
-void mostrarLista (struct Lista *);	//Hecho
-void mostrarInversa (struct Lista *);	//Hecho
-struct Lista *eliminarCola (struct Lista *);
-struct Lista *eliminarCabeza (struct Lista *);
-struct Lista *eliminarLista (struct Lista *);
-void buscarElemento (struct Lista *, int);
-struct Lista *buscarEliminar (struct Lista *, int);
+struct ListaDoble *agregarElemento (struct ListaDoble *, int);
+struct ListaDoble *mezclarListaDobles (struct ListaDoble *, struct ListaDoble *);
+void mostrarListaDoble (struct ListaDoble *);
+void mostrarInversa (struct ListaDoble *);
+struct ListaDoble *eliminarCola (struct ListaDoble *);
+struct ListaDoble *eliminarCabeza (struct ListaDoble *);
+struct ListaDoble *eliminarListaDoble (struct ListaDoble *);
+void buscarElemento (struct ListaDoble *, int);
+struct ListaDoble *buscarEliminar (struct ListaDoble *, int);
 
 #endif 
