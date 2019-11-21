@@ -4,9 +4,9 @@ int
 main (void)
 {
 
-  struct Lista *lista1 = NULL;
-  struct Lista *lista2 = NULL;
-  struct Lista *lista3 = NULL;
+  struct ListaDoble *lista1 = NULL;
+  struct ListaDoble *lista2 = NULL;
+  struct ListaDoble *lista3 = NULL;
 
   int max, numero,buscador = 0;
   //Ingresa el numero total de nodos en la lista
