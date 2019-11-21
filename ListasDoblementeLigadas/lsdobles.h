@@ -12,7 +12,7 @@ struct ListaDoble
 };
 
 struct ListaDoble *agregarElemento (struct ListaDoble *, int);
-struct ListaDoble *mezclarListaDobles (struct ListaDoble *, struct ListaDoble *);
+struct ListaDoble *mezclarLista (struct ListaDoble *, struct ListaDoble *);
 void mostrarLista (struct ListaDoble *);
 void mostrarInversa (struct ListaDoble *);
 struct ListaDoble *eliminarCola (struct ListaDoble *);
