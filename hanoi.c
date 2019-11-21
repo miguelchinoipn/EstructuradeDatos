@@ -1,4 +1,5 @@
 // Hanoi Tower
+/* This is an ordinary hanoi's tower program */
 #include <stdio.h>
 void HanoiTower (int disk, char from, char to, char aux);
 
