@@ -67,7 +67,7 @@ main (void)
   printf ("\n\n");
 
   //Eliminamos toda la lista
-  lista3 = eliminarLista (lista3);
+  lista3 = eliminarListaDobles (lista3);
   printf ("Lista Eliminada: ");
   mostrarLista (lista3);
 
