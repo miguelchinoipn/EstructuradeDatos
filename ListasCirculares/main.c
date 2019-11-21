@@ -3,9 +3,9 @@
 int
 main (void)
 {
-  struct Lista *lista1 = NULL;
-  struct Lista *lista2 = NULL;
-  struct Lista *lista3 = NULL;
+  struct ListaCircular *lista1 = NULL;
+  struct ListaCircular *lista2 = NULL;
+  struct ListaCircular *lista3 = NULL;
 
   int max, numero,busqueda = 0;
   //Ingresa el numero total de nodos en la lista
