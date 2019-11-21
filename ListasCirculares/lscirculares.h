@@ -16,7 +16,7 @@ struct ListaCircular *mezclarListas (struct ListaCircular *, struct ListaCircula
 struct ListaCircular *eliminarCola (struct ListaCircular *);
 struct ListaCircular *eliminarCabeza (struct ListaCircular *);
 struct ListaCircular *eliminarLista (struct ListaCircular *);
-void buscarElemento (struct ListaCircular *, int);
+int buscarElemento (struct ListaCircular *, int);
 struct ListaCircular *buscarEliminar (struct ListaCircular *, int);
 
 #endif
