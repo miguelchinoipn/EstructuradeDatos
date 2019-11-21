@@ -1,6 +1,5 @@
 #include"hash.h"
 
-
 int FuncionHash(char *palabra) //Primo con un universo de 200
 {
 	int numero = 0,i;
