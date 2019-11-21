@@ -39,8 +39,8 @@ void PreOrden(struct ArbolBB *arbol)
 		return;
 
 	printf("%d ",arbol -> dato);
-	PRE(arbol -> izq);
-	PRE(arbol -> der);
+	PreOrden(arbol -> izq);
+	PreOrden(arbol -> der);
 }
 
 void InOrden(struct ArbolBB *arbol)
@@ -48,9 +48,9 @@ void InOrden(struct ArbolBB *arbol)
 	if(arbol == NULL)
 		return;
 
-	IN(arbol -> izq);
+	InOrden(arbol -> izq);
 	printf("%d ",arbol -> dato);
-	IN(arbol -> der);
+	InOrden(arbol -> der);
 }
 
 void PostOrden(struct ArbolBB *arbol)
@@ -58,8 +58,8 @@ void PostOrden(struct ArbolBB *arbol)
 	if(arbol == NULL)
 		return;
 
-	POST(arbol -> izq);
-	POST(arbol -> der);
+	PostOrden(arbol -> izq);
+	PostOrden(arbol -> der);
 	printf("%d ",arbol -> dato);
 }
 
