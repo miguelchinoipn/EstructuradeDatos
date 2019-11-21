@@ -18,7 +18,7 @@ void mostrarInversa (struct ListaDoble *);
 struct ListaDoble *eliminarCola (struct ListaDoble *);
 struct ListaDoble *eliminarCabeza (struct ListaDoble *);
 struct ListaDoble *eliminarListaDoble (struct ListaDoble *);
-void buscarElemento (struct ListaDoble *, int);
+int buscarElemento (struct ListaDoble *, int);
 struct ListaDoble *buscarEliminar (struct ListaDoble *, int);
 
 #endif 
