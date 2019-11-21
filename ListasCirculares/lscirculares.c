@@ -1,3 +1,4 @@
+#include"lscirculares.h"
 
 struct Lista *
 agregarElemento (struct Lista *lista, int dato)
