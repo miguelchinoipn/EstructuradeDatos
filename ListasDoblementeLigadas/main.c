@@ -1,158 +1,77 @@
-/* Listas Doblemente Ligadas */
-#include<stdio.h>
-#include <stdlib.h>
-struct Lista
-{
-
-
-  int dato;
-
-
-  struct Lista *siguiente;
-
-
-  struct Lista *anterior;
-
-
-};
-
-struct Lista *agregarElemento (struct Lista *, int);	//Hecho
-struct Lista *mezclarListas (struct Lista *, struct Lista *);
-void mostrarLista (struct Lista *);	//Hecho
-void mostrarInversa (struct Lista *);	//Hecho
-struct Lista *eliminarCola (struct Lista *);
-struct Lista *eliminarCabeza (struct Lista *);
-struct Lista *eliminarLista (struct Lista *);
-void buscarElemento (struct Lista *, int);
-struct Lista *buscarEliminar (struct Lista *, int);
-
+#include"lsdobles.h"
 int
 main (void)
 {
 
-
   struct Lista *lista1 = NULL;
-
-
   struct Lista *lista2 = NULL;
-
-
   struct Lista *lista3 = NULL;
 
-
-
   int max, numero;
-
-
   //Ingresa el numero total de nodos en la lista
   scanf ("%d", &max);
-
-
   for (int i = 0; i < max; i++)
-
-    {
-
-
-      scanf ("%d", &numero);
-
-
-      lista1 = agregarElemento (lista1, numero);
-
-
-    }
+  {
+    scanf ("%d", &numero);  
+    lista1 = agregarElemento (lista1, numero);
+  }
+  
   //Ingresa el numero total de nodos en la lista2
   scanf ("%d", &max);
-
-
   for (int i = 0; i < max; i++)
-
-    {
-
-
-      scanf ("%d", &numero);
-
-
-      lista2 = agregarElemento (lista2, numero);
-
-
-    }
+  {
+    scanf ("%d", &numero);
+    lista2 = agregarElemento (lista2, numero);
+  }
 
   mostrarLista (lista1);
-
-
   printf ("\n\n");
-
 
   mostrarLista (lista2);
-
-
   printf ("\n\n");;
 
-
   lista3 = mezclarListas (lista1, lista2);
-
-
+  
   mostrarLista (lista3);
-
-
   printf ("\n\n");
-
 
   mostrarInversa (lista3);
-
   printf ("\n\n");
 
-
   //Eliminamos el ultimo elemento de la Lista 3
-
   lista3 = eliminarCola (lista3);
 
   mostrarLista (lista3);
-
   printf ("\n\n");
 
   //Eliminamos el primer elemento de lista 3
   lista3 = eliminarCabeza (lista3);
 
   mostrarLista (lista3);
-
-
   printf ("\n\n");
-
 
   //Buscamos un Elemento ingresado en la lista3 
   scanf ("%d", &numero);
-
   buscarElemento (lista3, numero);
 
   mostrarLista (lista3);
-
   printf ("\n\n");
-
 
   //Buscamos un Elemento y lo ELIMINAMOS de la lista3 
   scanf ("%d", &numero);
-
   lista3 = buscarEliminar (lista3, numero);
 
   mostrarLista (lista3);
-
   printf ("\n\n");
-
-
 
   //Eliminamos toda la lista
   lista3 = eliminarLista (lista3);
-
   printf ("Lista Eliminada: ");
-
   mostrarLista (lista3);
-
 
   printf ("\n");
 
-
-  return 0;
+return 0;
 }
 
 
