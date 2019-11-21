@@ -8,7 +8,7 @@ main (void)
   struct Lista *lista2 = NULL;
   struct Lista *lista3 = NULL;
 
-  int max, numero;
+  int max, numero,buscador = 0;
   //Ingresa el numero total de nodos en la lista
   scanf ("%d", &max);
   for (int i = 0; i < max; i++)
@@ -53,7 +53,8 @@ main (void)
 
   //Buscamos un Elemento ingresado en la lista3 
   scanf ("%d", &numero);
-  buscarElemento (lista3, numero);
+  buscador = buscarElemento (lista3, numero);
+   printf("Si es 1 se encontro, si es 0, no se pudo encontrar: %d\n\n",buscador);
 
   mostrarLista (lista3);
   printf ("\n\n");
