@@ -1,4 +1,5 @@
-#include "contiguas.h"
+#include"contiguas.h"
+
 int
 main (void)
 {
