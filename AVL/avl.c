@@ -1,12 +1,12 @@
 #include"avl.h"
-struct Nodo*
-insertar(struct Nodo *raizArbol, int datoInsertar) {
+struct avl*
+insertar(struct avl *raizArbol, int datoInsertar) {
 
-	 struct Nodo *nuevo = NULL;
+	 struct avl *nuevo = NULL;
 
    if (raizArbol == NULL) {
 
-		nuevo = malloc(sizeof(struct Nodo));
+		nuevo = malloc(sizeof(struct avl));
  		if (nuevo == NULL) {
  			return NULL;
  		}
@@ -64,11 +64,11 @@ insertar(struct Nodo *raizArbol, int datoInsertar) {
 		return raizArbol;
 }
 
-struct Nodo*
-rotacionDerecha(struct Nodo *raizDesbalanceada) {
+struct avl*
+rotacionDerecha(struct avl *raizDesbalanceada) {
 
-	struct Nodo *aux = raizDesbalanceada;
-		struct Nodo *aux2 = NULL;
+	struct avl *aux = raizDesbalanceada;
+		struct avl *aux2 = NULL;
 	raizDesbalanceada = raizDesbalanceada->hijoIzquierdo;
 
 	if (raizDesbalanceada->hijoDerecho != NULL) {
@@ -84,11 +84,11 @@ rotacionDerecha(struct Nodo *raizDesbalanceada) {
 
 }
 
-struct Nodo*
-rotacionIzquierda(struct Nodo *raizDesbalanceada) {
+struct avl*
+rotacionIzquierda(struct avl *raizDesbalanceada) {
 
-	struct Nodo *aux = raizDesbalanceada;
-		struct Nodo *aux2 = NULL;
+	struct avl *aux = raizDesbalanceada;
+		struct avl *aux2 = NULL;
 	raizDesbalanceada = raizDesbalanceada->hijoDerecho;
 
 	if (raizDesbalanceada->hijoIzquierdo != NULL) {
@@ -104,7 +104,7 @@ rotacionIzquierda(struct Nodo *raizDesbalanceada) {
 
 }
 
-int calcularAltura(struct Nodo *raiz){
+int calcularAltura(struct avl *raiz){
 
 	int alturaDerecha = 0;
 	int alturaIzquierda = 0;
@@ -122,7 +122,7 @@ int calcularAltura(struct Nodo *raiz){
 	return alturaDerecha+1;
 }
 
-int calcularFE(struct Nodo *raiz){
+int calcularFE(struct avl *raiz){
 
 	int alturaDerecha = 0;
 	int alturaIzquierda = 0;
@@ -137,7 +137,7 @@ int calcularFE(struct Nodo *raiz){
 	return alturaDerecha - alturaIzquierda;
 }
 
-int buscar(struct Nodo *raiz, int datoABuscar){
+int buscar(struct avl *raiz, int datoABuscar){
 
 	if (raiz == NULL) {
 
@@ -154,7 +154,7 @@ int buscar(struct Nodo *raiz, int datoABuscar){
 	}
 }
 
-void PreOrden(struct Nodo *raiz)
+void PreOrden(struct avl *raiz)
 {
 	PreOrden(raiz -> hijoIzquierdo);
 	printf("%d\n",raiz -> dato);
@@ -162,14 +162,14 @@ void PreOrden(struct Nodo *raiz)
 }
 
 
-void InOrden(struct Nodo *raiz)
+void InOrden(struct avl *raiz)
 {
 	InOrden(raiz -> hijoIzquierdo);
 	printf("%d\n",raiz -> dato);
 	InOrden(raiz -> hijoDerecho);
 }
 
-void PostOrden(struct Nodo *raiz)
+void PostOrden(struct avl *raiz)
 {
 	PostOrden(raiz -> hijoIzquierdo);
 	printf("%d\n",raiz -> dato);
