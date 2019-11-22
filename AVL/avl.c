@@ -153,3 +153,25 @@ int buscar(struct Nodo *raiz, int datoABuscar){
 		return buscar(raiz->hijoDerecho, datoABuscar);
 	}
 }
+
+void PreOrden(struct Nodo *raiz)
+{
+	PreOrden(raiz -> hijoIzquierdo);
+	printf("%d\n",raiz -> dato);
+	PreOrden(raiz -> hijoDerecho);
+}
+
+
+void InOrden(struct Nodo *raiz)
+{
+	InOrden(raiz -> hijoIzquierdo);
+	printf("%d\n",raiz -> dato);
+	InOrden(raiz -> hijoDerecho);
+}
+
+void PostOrden(struct Nodo *raiz)
+{
+	PostOrden(raiz -> hijoIzquierdo);
+	printf("%d\n",raiz -> dato);
+	PostOrden(raiz -> hijoDerecho);
+}

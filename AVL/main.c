@@ -26,9 +26,10 @@ int main(void) {
 	printf("%d - (%d)\n", raiz->hijoDerecho->hijoIzquierdo->hijoDerecho->dato , raiz->hijoDerecho->hijoIzquierdo->hijoDerecho->fe);
 	printf("%d - (%d)\n", raiz->hijoIzquierdo->dato , raiz->hijoIzquierdo->fe);
 	printf("%d - (%d)\n", raiz->hijoIzquierdo->hijoDerecho->dato , raiz->hijoIzquierdo->hijoDerecho->fe);
-	printf("%d - (%d)---\n", raiz->hijoIzquierdo->hijoIzquierdo->dato , raiz->hijoIzquierdo->hijoIzquierdo->fe);
+	//printf("sdf\n");
+	//printf("%d - (%d)---\n", raiz->hijoIzquierdo->hijoIzquierdo->dato , raiz->hijoIzquierdo->hijoIzquierdo->fe);
 
-	printf("-%d-\n", buscar(raiz, 3));
+	printf("-%d-\n", buscar(raiz, 25));
 
 	return 0;
 }
