@@ -1,4 +1,4 @@
-#include"lssligadas.h"
+#include"cola.h"
 
 int
 main (void)
