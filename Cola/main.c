@@ -68,7 +68,7 @@ main (void)
 
   //Eliminamos toda la cola
   cola3 = eliminarCola (cola3);
-  printf ("cola Eliminada: ");
+  printf ("Cola Eliminada: ");
   mostrar (cola3);
   printf ("\n");
 
