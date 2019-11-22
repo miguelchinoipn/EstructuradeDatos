@@ -1,4 +1,3 @@
-//Cola main
 #ifndef __COLA_H__
 #define __COLA_H__
 
@@ -12,7 +11,7 @@ struct Cola
 };
 
 struct Cola *agregarElemento (struct Cola *, int);
-struct Cola *mezclarListas (struct Cola *, struct Cola *);
+struct Cola *mezclarCola (struct Cola *, struct Cola *);
 void mostrar (struct Cola *);
 void mostrarInversa (struct Cola *);
 struct Cola *eliminarFinal (struct Cola *);
