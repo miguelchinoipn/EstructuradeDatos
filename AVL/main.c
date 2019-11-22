@@ -5,24 +5,15 @@ int main(void) {
 
 	int datoInsertar;
 
-	scanf("%d", &datoInsertar);
-	raiz = insertar(raiz, datoInsertar);
-	scanf("%d", &datoInsertar);
-	raiz = insertar(raiz, datoInsertar);
-	scanf("%d", &datoInsertar);
-	raiz = insertar(raiz, datoInsertar);
-	scanf("%d", &datoInsertar);
-	raiz = insertar(raiz, datoInsertar);
-	scanf("%d", &datoInsertar);
-	raiz = insertar(raiz, datoInsertar);
-	scanf("%d", &datoInsertar);
-	raiz = insertar(raiz, datoInsertar);
-	scanf("%d", &datoInsertar);
-	raiz = insertar(raiz, datoInsertar);
-	scanf("%d", &datoInsertar);
-	raiz = insertar(raiz, datoInsertar);
-	scanf("%d", &datoInsertar);
-	raiz = insertar(raiz, datoInsertar);
+	raiz = insertar(raiz, 23);
+	raiz = insertar(raiz, 645);
+	raiz = insertar(raiz, 5);
+	raiz = insertar(raiz, 87);
+	raiz = insertar(raiz, 223);
+	raiz = insertar(raiz, 15);
+	raiz = insertar(raiz, 698);
+	raiz = insertar(raiz, 34);
+	raiz = insertar(raiz, 25);
 
 
 	// raiz = rotacionIzquierda(raiz);
