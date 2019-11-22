@@ -165,9 +165,9 @@ buscarElemento (struct ListaSLigada *lista, int dato)
       if (aux->dato == dato)
 	{
 	  //printf (" %d :)! \n", aux->dato);
-    band = 1;
+	  band = 1;
 	  return 1;
-    break;
+	  break;
 	}
       aux = aux->siguiente;
     }

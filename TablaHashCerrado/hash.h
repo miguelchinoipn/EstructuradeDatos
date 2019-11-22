@@ -15,6 +15,6 @@ int FuncionHash(char *);
 void AgregarDato(struct TablaHash **, char *);
 void EliminarDato(struct TablaHash **, char *);
 void ImprimirTabla(struct TablaHash *);
-void BuscarDato(struct TablaHash*, char *);
+int BuscarDato(struct TablaHash*, char *);
 
 #endif

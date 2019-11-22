@@ -8,22 +8,22 @@ main (void)
   struct ListaSLigada *lista2 = NULL;
   struct ListaSLigada *lista3 = NULL;
 
-  int max, numero,busqueda = 0;
+  int max, numero, busqueda = 0;
 
   //Ingresa el numero total de nodos en la lista
   scanf ("%d", &max);
   for (int i = 0; i < max; i++)
-  {
+    {
       scanf ("%d", &numero);
       lista1 = agregarElemento (lista1, numero);
-  }
+    }
   //Ingresa el numero total de nodos en la lista2
   scanf ("%d", &max);
   for (int i = 0; i < max; i++)
-  {
-    scanf ("%d", &numero);
-    lista2 = agregarElemento (lista2, numero);
-  }
+    {
+      scanf ("%d", &numero);
+      lista2 = agregarElemento (lista2, numero);
+    }
 
   mostrarLista (lista1);
   printf ("\n\n");
@@ -32,7 +32,7 @@ main (void)
   printf ("\n\n");;
 
   lista3 = mezclarListas (lista1, lista2);
-  
+
   mostrarLista (lista3);
   printf ("\n\n");
 
@@ -54,7 +54,8 @@ main (void)
   //Buscamos un Elemento ingresado en la lista3 
   scanf ("%d", &numero);
   busqueda = buscarElemento (lista3, numero);
-  printf("Si es 1 se encontro, si es 0, no se pudo encontrar: %d\n\n",busqueda);
+  printf ("Si es 1 se encontro, si es 0, no se pudo encontrar: %d\n\n",
+	  busqueda);
 
   mostrarLista (lista3);
   printf ("\n\n");

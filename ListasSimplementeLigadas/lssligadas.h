@@ -16,7 +16,8 @@ struct ListaSLigada
 };
 
 struct ListaSLigada *agregarElemento (struct ListaSLigada *, int);
-struct ListaSLigada *mezclarListas (struct ListaSLigada *, struct ListaSLigada *);
+struct ListaSLigada *mezclarListas (struct ListaSLigada *,
+				    struct ListaSLigada *);
 void mostrarLista (struct ListaSLigada *);
 void mostrarInversa (struct ListaSLigada *);
 struct ListaSLigada *eliminarCola (struct ListaSLigada *);

@@ -1,4 +1,4 @@
-#include"hash.h"
+#include"pila.h"
 
 int
 main (void)

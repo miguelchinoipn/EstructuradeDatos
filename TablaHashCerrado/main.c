@@ -3,6 +3,7 @@
 int
 main(void)
 {
+	int busqueda = 0;
 	struct TablaHash *tabla = NULL;
 
 	AgregarDato(&tabla,"Hola");
@@ -10,9 +11,9 @@ main(void)
 	AgregarDato(&tabla,"Progra");
 	AgregarDato(&tabla,"argorP");
 
-	//ImprimirTabla(tabla);
+	busqueda = BuscarDato(tabla,"argorP");
 
-	BuscarDato(tabla,"argorP");
+	printf("Si es 1 se encontro, si es 0 no se pudo encontrar: %d",busqueda);
 
 	EliminarDato(&tabla,"Progra");
 	BuscarDato(tabla,"Progra");

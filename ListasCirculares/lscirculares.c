@@ -53,11 +53,8 @@ mostrarLista (struct ListaCircular *lista)
 
   while (aux != lista)
     {
-
       printf ("%d ", aux->dato);
-
       aux = aux->siguiente;
-
     }
 }
 
@@ -112,7 +109,6 @@ mezclarListas (struct ListaCircular *lista1, struct ListaCircular *lista2)
 
   while (lista1 != fin1 || lista2 != fin2)
     {
-
       if (lista1 != fin1)
 	{
 
@@ -130,9 +126,7 @@ mezclarListas (struct ListaCircular *lista1, struct ListaCircular *lista2)
 
       if (lista2 != fin2)
 	{
-
 	  ListaMezclada = agregarElemento (ListaMezclada, lista2->dato);
-
 	  lista2 = lista2->siguiente;
 	}
       else if (band2 == 1)
@@ -156,7 +150,6 @@ mezclarListas (struct ListaCircular *lista1, struct ListaCircular *lista2)
       ListaMezclada = agregarElemento (ListaMezclada, lista1->dato);
       ListaMezclada = agregarElemento (ListaMezclada, lista2->dato);
     }
-
 
   return ListaMezclada;
 }
