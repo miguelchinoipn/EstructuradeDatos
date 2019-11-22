@@ -4,19 +4,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Nodo{
+struct AVL{
 
 	int dato;
 	int fe;
-	struct Nodo *hijoDerecho;
-	struct Nodo *hijoIzquierdo;
+	struct AVL *hijoDerecho;
+	struct AVL *hijoIzquierdo;
 };
 
-struct Nodo* insertar();
-struct Nodo* rotacionDerecha();
-struct Nodo* rotacionIzquierda();
+struct AVL* insertar();
+struct AVL* rotacionDerecha();
+struct AVL* rotacionIzquierda();
 int calcularAltura();
 int calcularFE();
 int buscar();
+
+void PreOrden(struct AVL *);
+void InOrden(struct AVL *);
+void PostOrden(struct AVL *);
 
 #endif
