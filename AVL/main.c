@@ -1,7 +1,7 @@
 #include"avl.h"
 int main(void) {
 
-   struct Nodo *raiz = NULL;
+   struct avl *raiz = NULL;
 
 	int datoInsertar;
 
