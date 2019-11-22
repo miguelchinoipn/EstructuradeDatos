@@ -1,4 +1,4 @@
-
+#include"avl.h"
 int main(void) {
 
    struct Nodo *raiz = NULL;
