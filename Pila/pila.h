@@ -11,5 +11,6 @@ struct Stack
 
 struct Stack *Push (struct Stack *, int);
 struct Stack *Pop (struct Stack *);
+struct Stack *PrintStack(struct Stack *);
 
 #endif
