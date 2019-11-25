@@ -1,30 +1,23 @@
 #include"contiguas.h"
-
-int
-main (void)
+int main(void)
 {
-  struct Contigua *lista = NULL;
+  struct Contiguas *lista = NULL;
 
-  insertar (&lista, 1);
-  insertar (&lista, 2);
-  insertar (&lista, 3);
-  insertar (&lista, 4);
-  insertar (&lista, 5);
-  insertar (&lista, 6);
-  insertar (&lista, 7);
-  insertar (&lista, 8);
-  insertar (&lista, 9);
-  insertar (&lista, 239);
-  insertar (&lista, 9234);
+  AgregarElemento(&lista,35);
+  AgregarElemento(&lista,23);
+  AgregarElemento(&lista,48);
+  Imprimir(lista);
+  printf("\n\n");
+  AgregarElemento(&lista,35);
+  AgregarElemento(&lista,23);
+  AgregarElemento(&lista,48);
+  Imprimir(lista);
 
-  mostrar (lista);
-  
-  eliminar (&lista, 1);
-  eliminar (&lista, 3);
-  eliminar (&lista, 5);
-  eliminar (&lista, 7);
-  eliminar (&lista, 8);
-  eliminar (&lista, 9);
-  mostrar (lista);
-  return 0;
+  EliminarElemento(&lista,48);
+  EliminarElemento(&lista,48);
+  printf("Eliminada:\n");
+  Imprimir(lista);
+
+printf("\n");
+return 0;
 }
