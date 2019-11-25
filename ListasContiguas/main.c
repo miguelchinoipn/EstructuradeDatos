@@ -15,7 +15,7 @@ int main(void)
 
   EliminarElemento(&lista,48);
   EliminarElemento(&lista,48);
-  printf("Eliminada:\n");
+  printf("\n\n");
   Imprimir(lista);
 
 printf("\n");
