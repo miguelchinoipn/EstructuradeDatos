@@ -17,7 +17,7 @@ int main(void) {
 
 
 	// raiz = rotacionIzquierda(raiz);
-
+	/*
 	printf("%d - (%d)\n", raiz->dato , raiz->fe);
 	printf("%d - (%d)\n", raiz->hijoDerecho->dato , raiz->hijoDerecho->fe);
 	printf("%d - (%d)\n", raiz->hijoDerecho->hijoDerecho->dato , raiz->hijoDerecho->hijoDerecho->fe);
@@ -29,7 +29,9 @@ int main(void) {
 	//printf("sdf\n");
 	//printf("%d - (%d)---\n", raiz->hijoIzquierdo->hijoIzquierdo->dato , raiz->hijoIzquierdo->hijoIzquierdo->fe);
 
-	printf("-%d-\n", buscar(raiz, 25));
+	printf("-%d-\n", buscar(raiz, 25)); */
+
+	PreOrden(raiz);
 
 	return 0;
 }

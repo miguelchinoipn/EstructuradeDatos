@@ -156,8 +156,8 @@ int buscar(struct avl *raiz, int datoABuscar){
 
 void PreOrden(struct avl *raiz)
 {
-	PreOrden(raiz -> hijoIzquierdo);
 	printf("%d\n",raiz -> dato);
+	PreOrden(raiz -> hijoIzquierdo);
 	PreOrden(raiz -> hijoDerecho);
 }
 
