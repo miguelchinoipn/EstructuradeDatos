@@ -9,7 +9,7 @@ struct TablaHash
 {
 	char **datos;
 	int cuantos; //200
-	struct ListaLigada lista;
+	struct ListaLigada *lista;
 };
 
 struct ListaLigada
@@ -24,7 +24,7 @@ void EliminarDato(struct TablaHash **, char *);
 void ImprimirTabla(struct TablaHash *);
 int BuscarDato(struct TablaHash*, char *);
 
-struct ListaSLigada *agregarElemento (struct ListaSLigada *, char *);
-
+struct ListaLigada *agregarElemento (struct ListaLigada *, char *);
+int buscarElemento (struct ListaLigada *, char *);
 
 #endif

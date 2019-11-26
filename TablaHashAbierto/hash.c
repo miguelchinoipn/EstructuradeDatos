@@ -28,9 +28,13 @@ AgregarDato (struct TablaHash **tabla, char *palabra)
     }
   	posicion = FuncionHash (palabra);
 
-  	if(*((*tabla)->datos + posicion) != 0) //Agregamos a la lista
+  	if(*((*tabla)->datos + posicion) == 0)
+  	{
+  	*((*tabla)->datos + posicion + i) = palabra;
+  	}
+  	else if(*((*tabla)->datos + posicion) != 0) //Agregamos a la lista
     {
-     *((*tabla)->lista) = agregarElemento(*((*tabla)->lista), palabra);
+     (*tabla)->lista = agregarElemento((*tabla)->lista, palabra);
     }
 
   return;
@@ -49,18 +53,11 @@ BuscarDato (struct TablaHash *tabla, char *palabra)
     {
       if (strcmp (*(tabla->datos + posicion), palabra) == 0)	//Si la palabra encontradad es igual a la buscada
 	{
-	  printf ("%s\n", *(tabla->datos + posicion));
+	  return 1;
 	}
       else
 	{
-	  if (posicion == 200)
-	    {
-	      for (i = 0; strcmp (*(tabla->datos + i), palabra) != 0; i++);	//Aumentar el contador mientras la palabra encontrada sea distinta de la buscada
-	      return 1;
-	    }
-
-	  for (i = 0; strcmp (*(tabla->datos + posicion + i), palabra) != 0; i++);	//Aumentar el contador mientras la palabra encontrada sea distinta de la buscada
-	  printf ("%s\n", *(tabla->datos + posicion + i));
+	 return buscarElemento(tabla->lista,palabra);
 	}
     }
   else
@@ -107,29 +104,28 @@ EliminarDato (struct TablaHash **tabla, char *palabra)
 }
 
 struct ListaLigada *
-agregarElemento (struct ListaSLigada *lista, char *dato)
+agregarElemento (struct ListaLigada *lista, char *dato)
 {
   //Agrega elementos al inicio de la lista
-  struct ListaSLigada *nuevo = NULL;
-  nuevo = (struct ListaSLigada *) malloc (sizeof (struct ListaSLigada));
+  struct ListaLigada *nuevo = NULL;
+  nuevo = (struct ListaLigada *) malloc (sizeof (struct ListaLigada));
   nuevo->dato = dato;
   nuevo->siguiente = lista;
 
   return nuevo;
 }
 
-/*
+
 int
-buscarElemento (struct ListaSLigada *lista, char *dato)
+buscarElemento (struct ListaLigada *lista, char *dato)
 {
-  struct ListaSLigada *aux = NULL;
+  struct ListaLigada *aux = NULL;
   int band = 0;
   aux = lista;
   while (aux != NULL)
     {
-      if (aux->dato == dato)
+    if ( strcmp (lista->dato, dato) == 0)
 	{
-	  //printf (" %d :)! \n", aux->dato);
 	  band = 1;
 	  return 1;
 	  break;
@@ -142,4 +138,4 @@ buscarElemento (struct ListaSLigada *lista, char *dato)
       return 0;
     }
 
-} */
+}
