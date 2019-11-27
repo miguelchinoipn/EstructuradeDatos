@@ -4,20 +4,29 @@
 #include<stdio.h>
 #include <stdlib.h>
 
-struct Cola
-{
-  int dato;
-  struct Cola *siguiente;
-};
+typedef struct Nodo{
+	Elem dato;
+	int prioridad;
+	struct Nodo *sig;
+}*ApNodo;
 
-struct Cola *agregarElemento (struct Cola *, int);
-struct Cola *mezclarCola (struct Cola *, struct Cola *);
-void mostrar (struct Cola *);
-void mostrarInversa (struct Cola *);
-struct Cola *eliminarFinal (struct Cola *);
-struct Cola *eliminarCabeza (struct Cola *);
-struct Cola *eliminarCola (struct Cola *); //Elimina toda la fila
-int buscarElemento (struct Cola *, int);
-struct Cola *buscarEliminar (struct Cola *, int);
+typedef struct CNodo{
+	ApNodo sal;
+	ApNodo ent;	
+}*ColaP;
+
+typedef int Elem;
+
+ColaP nuevaP();
+int esnuevaP(ColaP p);
+ColaP formarP(ColaP p, Elem e);
+Elem primeroP(ColaP p);
+ColaP desformarP(ColaP p);
+ColaP ImpColaP(ColaP p);
+void ImpElem(Elem e);
+int esMoI(Elem e1, Elem e2);
+int esMenor(Elem e1,Elem e2);
+int esIgual(Elem e1, Elem e2);
+int establecarPrioridad(Elem e);
 
 #endif
