@@ -2,7 +2,7 @@
 
 int main(){
   puts("Cola Original:");
-  ColaP p=formarP(formarP(formarP(nuevaP(),3),2),1);
+  struct ColaPrioridad *p=formarP(formarP(formarP(nuevaP(),3),2),1);
   p=ImpColaP(p);
   puts("Agregando 4 a la Cola:");
   p=formarP(p,4);
