@@ -10,7 +10,7 @@ int esnuevaP(ColaP p){
   return((p->ent==NULL)&&(p->sal==NULL));
 }
 
-ColaP formarP(ColaP p, Elem e){
+ColaP formarP(ColaP p, int e){
   ApNodo t=(ApNodo)malloc(sizeof(struct Nodo));
   t->dato=e;t->sig=NULL;t->prioridad=establecarPrioridad(e);
   if(esnuevaP(p)){
@@ -39,7 +39,7 @@ ColaP formarP(ColaP p, Elem e){
   return p;
 }
 
-Elem primeroP(ColaP p){
+int primeroP(ColaP p){
   return p->sal->dato;
 }
 
@@ -57,29 +57,29 @@ ColaP ImpColaP(ColaP p){
   ColaP c=nuevaP();
   while(!esnuevaP(p)){
     c=formarP(c,primeroP(p));
-    ImpElem(primeroP(p));
+    Impint(primeroP(p));
     p=desformarP(p);
   }
   free(p);
   return c;
 }
 
-void ImpElem(Elem e){
+void Impint(int e){
   printf("%d\n",e);
 }
 
-int esMoI(Elem e1, Elem e2){
+int esMoI(int e1, int e2){
   return e1>=e2;
 }
 
-int esMenor(Elem e1,Elem e2){
+int esMenor(int e1,int e2){
   return e1<e2;
 }
 
-int esIgual(Elem e1, Elem e2){
+int esIgual(int e1, int e2){
   return e1==e2;
 }
 
-int establecarPrioridad(Elem e){
+int establecarPrioridad(int e){
   return e;
 }
