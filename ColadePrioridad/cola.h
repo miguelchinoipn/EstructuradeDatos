@@ -4,23 +4,23 @@
 #include<stdio.h>
 #include <stdlib.h>
 
-typedef struct Nodo{
+struct Cola{
 	int dato;
 	int prioridad;
 	struct Nodo *sig;
-}*ApNodo;
+};
 
-typedef struct CNodo{
-	ApNodo sal;
-	ApNodo ent;	
-}*ColaP;
+struct ColaPrioridad{
+	struct Cola *sal;
+	struct Cola *ent;	
+};
 
-ColaP nuevaP();
-int esnuevaP(ColaP p);
-ColaP formarP(ColaP p, int e);
-int primeroP(ColaP p);
-ColaP desformarP(ColaP p);
-ColaP ImpColaP(ColaP p);
+struct ColaPrioridad *nuevaP();
+int esnuevaP(struct ColaPrioridad *p);
+struct ColaPrioridad *formarP(struct ColaPrioridad *p, int e);
+int primeroP(struct ColaPrioridad *p);
+struct ColaPrioridad *desformarP(struct ColaPrioridad *p);
+struct ColaPrioridad *Impstruct(*struct ColaPrioridad *p);
 void Impint(int e);
 int esMoI(int e1, int e2);
 int esMenor(int e1,int e2);

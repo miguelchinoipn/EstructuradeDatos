@@ -1,17 +1,17 @@
 #include"cola.h"
 
-ColaP nuevaP(){
-  ColaP p=(ColaP)malloc(sizeof(struct CNodo));
+struct ColaPrioridad* nuevaP(){
+  struct ColaPrioridad* p=(struct ColaPrioridad*)malloc(sizeof(struct ColaPrioridad));
   p->sal=NULL;p->ent=NULL;
   return p;
 }
 
-int esnuevaP(ColaP p){
+int esnuevaP(struct ColaPrioridad* p){
   return((p->ent==NULL)&&(p->sal==NULL));
 }
 
-ColaP formarP(ColaP p, int e){
-  ApNodo t=(ApNodo)malloc(sizeof(struct Nodo));
+struct ColaPrioridad* formarP(struct ColaPrioridad* p, int e){
+  struct Cola* t=(struct Cola*)malloc(sizeof(struct Nodo));
   t->dato=e;t->sig=NULL;t->prioridad=establecarPrioridad(e);
   if(esnuevaP(p)){
     p->sal=p->ent=t;
@@ -23,7 +23,7 @@ ColaP formarP(ColaP p, int e){
       p->ent->sig=t;
       p->ent=t;
     }else{ //Caso nuevo nodo esta en medio de la cola
-      ApNodo aux=p->sal;
+      struct Cola* aux=p->sal;
       int i=1;
       while(i){
         if((t->prioridad<aux->prioridad) && (t->prioridad>=aux->sig->prioridad)){
@@ -39,12 +39,12 @@ ColaP formarP(ColaP p, int e){
   return p;
 }
 
-int primeroP(ColaP p){
+int primeroP(struct ColaPrioridad* p){
   return p->sal->dato;
 }
 
-ColaP desformarP(ColaP p){
-  ApNodo t=p->sal;
+struct ColaPrioridad* desformarP(struct ColaPrioridad* p){
+  struct Cola* t=p->sal;
   if(p->sal==p->ent)
     p=nuevaP();
   else
@@ -53,8 +53,8 @@ ColaP desformarP(ColaP p){
   return p;
 }
 
-ColaP ImpColaP(ColaP p){
-  ColaP c=nuevaP();
+struct ColaPrioridad* Impstruct(struct ColaPrioridad* p){
+  struct ColaPrioridad* c=nuevaP();
   while(!esnuevaP(p)){
     c=formarP(c,primeroP(p));
     Impint(primeroP(p));
