@@ -1,22 +1,15 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "Elem.h"
-#include "Circular.h"
-
-void carrusel(Circular c){
-	while(!esnuevaC(c)){
-		ImpElem(primeroC(c));
-		c=desformarC(c);
-		//getchar();
-	}
-}
-
+#include "circular.h"
 int main(){
-	Circular c= nuevaC();
+	struct CCircular* c= nuevaC();
 	int i;
-	for(i=1;i<=10;i++){
-		c=formarC(c,i);
-	}
+	
+	c=formarC(c,1);
+	c=formarC(c,2);
+	c=formarC(c,3);
+	c=formarC(c,4);
+	c=formarC(c,5);
+	c=formarC(c,10);
+
 	carrusel(c);
 	return 0;
 }
