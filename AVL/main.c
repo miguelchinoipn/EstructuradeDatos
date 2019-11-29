@@ -14,8 +14,8 @@ int main(void) {
 
 	mostrar(raiz);
 
-	printf("\n%d\n", buscar(raiz, 1));
-	printf("%d\n\n", buscar(raiz, 90));
+	printf("\nSi es 1 se encontro, si es 0, no se pudo encontrar: %d\n", buscar(raiz, 1));
+	printf("Si es 1 se encontro, si es 0, no se pudo encontrar: %d\n", buscar(raiz, 15));
 
 	return 0;
 }
