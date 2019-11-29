@@ -1,110 +1,109 @@
-#include"avl.h"
-struct avl*
-insertar(struct avl *raizArbol, int datoInsertar) {
+#include "avl.h"
 
-	 struct avl *nuevo = NULL;
+struct AVL* insertar(struct AVL *raizArbol, int datoInsertar) {
+
+	 struct AVL *nuevo = NULL;
 
    if (raizArbol == NULL) {
 
-		nuevo = malloc(sizeof(struct avl));
+		nuevo = malloc(sizeof(struct AVL));
  		if (nuevo == NULL) {
  			return NULL;
  		}
-		nuevo->dato = datoInsertar;
-		nuevo->fe = 0;
-		nuevo->hijoDerecho = NULL;
-		nuevo->hijoIzquierdo = NULL;
+		nuevo -> dato = datoInsertar;
+		nuevo -> fe = 0;
+		nuevo -> hijoDerecho = NULL;
+		nuevo -> hijoIzquierdo = NULL;
 		return nuevo;
    }
 
-		if (raizArbol->dato == datoInsertar) {
+		if (raizArbol -> dato == datoInsertar) {
 
 			return raizArbol;
 		}
-		if (datoInsertar > raizArbol->dato) {
+		if (datoInsertar > raizArbol -> dato) {
 
-			raizArbol->hijoDerecho = insertar(raizArbol->hijoDerecho, datoInsertar);
+			raizArbol -> hijoDerecho = insertar(raizArbol -> hijoDerecho, datoInsertar);
 
 		} else {
 
-			raizArbol->hijoIzquierdo = insertar(raizArbol->hijoIzquierdo, datoInsertar);
+			raizArbol -> hijoIzquierdo = insertar(raizArbol -> hijoIzquierdo, datoInsertar);
 
 		}
-		raizArbol->fe = calcularFE(raizArbol);
-		if ((raizArbol->fe == -2) && (raizArbol->hijoIzquierdo->fe == -1)) {
+		raizArbol -> fe = calcularFB(raizArbol);
+		if ((raizArbol -> fe == -2) && (raizArbol -> hijoIzquierdo -> fe == -1)) {
 			raizArbol = rotacionDerecha(raizArbol);
-			raizArbol->fe = calcularFE(raizArbol);
-			raizArbol->hijoDerecho->fe = calcularFE(raizArbol->hijoDerecho);
-			raizArbol->hijoIzquierdo->fe = calcularFE(raizArbol->hijoIzquierdo);
+			raizArbol -> fe = calcularFB(raizArbol);
+			raizArbol -> hijoDerecho -> fe = calcularFB(raizArbol -> hijoDerecho);
+			raizArbol -> hijoIzquierdo -> fe = calcularFB(raizArbol -> hijoIzquierdo);
 		}
 
-		if ((raizArbol->fe == 2) && (raizArbol->hijoDerecho->fe == 1)) {
+		if ((raizArbol -> fe == 2) && (raizArbol -> hijoDerecho -> fe == 1)) {
 			raizArbol = rotacionIzquierda(raizArbol);
-			raizArbol->fe = calcularFE(raizArbol);
-			raizArbol->hijoDerecho->fe = calcularFE(raizArbol->hijoDerecho);
-			raizArbol->hijoIzquierdo->fe = calcularFE(raizArbol->hijoIzquierdo);
+			raizArbol -> fe = calcularFB(raizArbol);
+			raizArbol -> hijoDerecho -> fe = calcularFB(raizArbol -> hijoDerecho);
+			raizArbol -> hijoIzquierdo -> fe = calcularFB(raizArbol -> hijoIzquierdo);
 		}
 
-		if ((raizArbol->fe > 1) && (raizArbol->hijoDerecho->fe < 0)) {
-			raizArbol->hijoDerecho = rotacionDerecha(raizArbol->hijoDerecho);
+		if ((raizArbol -> fe > 1) && (raizArbol -> hijoDerecho -> fe < 0)) {
+			raizArbol -> hijoDerecho = rotacionDerecha(raizArbol -> hijoDerecho);
 			raizArbol = rotacionIzquierda(raizArbol);
-			raizArbol->fe = calcularFE(raizArbol);
-			raizArbol->hijoDerecho->fe = calcularFE(raizArbol->hijoDerecho);
-			raizArbol->hijoIzquierdo->fe = calcularFE(raizArbol->hijoIzquierdo);
+			raizArbol -> fe = calcularFB(raizArbol);
+			raizArbol -> hijoDerecho -> fe = calcularFB(raizArbol -> hijoDerecho);
+			raizArbol -> hijoIzquierdo -> fe = calcularFB(raizArbol -> hijoIzquierdo);
 		}
 
-		if ((raizArbol->fe < -1) && (raizArbol->hijoIzquierdo->fe > 0)) {
-			raizArbol->hijoIzquierdo = rotacionIzquierda(raizArbol->hijoIzquierdo);
+		if ((raizArbol -> fe < -1) && (raizArbol -> hijoIzquierdo -> fe > 0)) {
+			raizArbol -> hijoIzquierdo = rotacionIzquierda(raizArbol -> hijoIzquierdo);
 			raizArbol = rotacionDerecha(raizArbol);
-			raizArbol->fe = calcularFE(raizArbol);
-			raizArbol->hijoDerecho->fe = calcularFE(raizArbol->hijoDerecho);
-			raizArbol->hijoIzquierdo->fe = calcularFE(raizArbol->hijoIzquierdo);
+			raizArbol -> fe = calcularFB(raizArbol);
+			raizArbol -> hijoDerecho -> fe = calcularFB(raizArbol -> hijoDerecho);
+			raizArbol -> hijoIzquierdo -> fe = calcularFB(raizArbol -> hijoIzquierdo);
 		}
 
 		return raizArbol;
 }
 
-struct avl*
-rotacionDerecha(struct avl *raizDesbalanceada) {
+struct AVL*
+rotacionDerecha(struct AVL *raizDesbalanceada) {
 
-	struct avl *aux = raizDesbalanceada;
-		struct avl *aux2 = NULL;
-	raizDesbalanceada = raizDesbalanceada->hijoIzquierdo;
+	struct AVL *aux = raizDesbalanceada;
+		struct AVL *aux2 = NULL;
+	raizDesbalanceada = raizDesbalanceada -> hijoIzquierdo;
 
-	if (raizDesbalanceada->hijoDerecho != NULL) {
+	if (raizDesbalanceada -> hijoDerecho != NULL) {
 
-		aux2 = raizDesbalanceada->hijoDerecho;
+		aux2 = raizDesbalanceada -> hijoDerecho;
 	}
 
-	raizDesbalanceada->hijoDerecho = aux;
+	raizDesbalanceada -> hijoDerecho = aux;
 
-	raizDesbalanceada->hijoDerecho->hijoIzquierdo = aux2;
+	raizDesbalanceada -> hijoDerecho -> hijoIzquierdo = aux2;
 
 	return raizDesbalanceada;
 
 }
 
-struct avl*
-rotacionIzquierda(struct avl *raizDesbalanceada) {
+struct AVL* rotacionIzquierda(struct AVL *raizDesbalanceada) {
 
-	struct avl *aux = raizDesbalanceada;
-		struct avl *aux2 = NULL;
-	raizDesbalanceada = raizDesbalanceada->hijoDerecho;
+	struct AVL *aux = raizDesbalanceada;
+		struct AVL *aux2 = NULL;
+	raizDesbalanceada = raizDesbalanceada -> hijoDerecho;
 
-	if (raizDesbalanceada->hijoIzquierdo != NULL) {
+	if (raizDesbalanceada -> hijoIzquierdo != NULL) {
 
-		aux2 = raizDesbalanceada->hijoIzquierdo;
+		aux2 = raizDesbalanceada -> hijoIzquierdo;
 	}
 
-	raizDesbalanceada->hijoIzquierdo = aux;
+	raizDesbalanceada -> hijoIzquierdo = aux;
 
-	raizDesbalanceada->hijoIzquierdo->hijoDerecho = aux2;
+	raizDesbalanceada -> hijoIzquierdo -> hijoDerecho = aux2;
 
 	return raizDesbalanceada;
 
 }
 
-int calcularAltura(struct avl *raiz){
+int calcularAltura(struct AVL *raiz){
 
 	int alturaDerecha = 0;
 	int alturaIzquierda = 0;
@@ -113,8 +112,8 @@ int calcularAltura(struct avl *raiz){
 		return -1;
 	}
 
-	alturaIzquierda = calcularAltura(raiz->hijoIzquierdo);
-	alturaDerecha = calcularAltura(raiz->hijoDerecho);
+	alturaIzquierda = calcularAltura(raiz -> hijoIzquierdo);
+	alturaDerecha = calcularAltura(raiz -> hijoDerecho);
 
 	if (alturaIzquierda > alturaDerecha) {
 		return alturaIzquierda+1;
@@ -122,7 +121,7 @@ int calcularAltura(struct avl *raiz){
 	return alturaDerecha+1;
 }
 
-int calcularFE(struct avl *raiz){
+int calcularFB(struct AVL *raiz){
 
 	int alturaDerecha = 0;
 	int alturaIzquierda = 0;
@@ -131,13 +130,13 @@ int calcularFE(struct avl *raiz){
 		return 0;
 	}
 
-	alturaIzquierda = calcularAltura(raiz->hijoIzquierdo);
-	alturaDerecha = calcularAltura(raiz->hijoDerecho);
+	alturaIzquierda = calcularAltura(raiz -> hijoIzquierdo);
+	alturaDerecha = calcularAltura(raiz -> hijoDerecho);
 
 	return alturaDerecha - alturaIzquierda;
 }
 
-int buscar(struct avl *raiz, int datoABuscar){
+int buscar(struct AVL *raiz, int datoABuscar){
 
 	if (raiz == NULL) {
 
@@ -145,33 +144,23 @@ int buscar(struct avl *raiz, int datoABuscar){
 	} else if (raiz->dato == datoABuscar) {
 
 		return 1;
-	}	else if (datoABuscar < raiz->dato) {
+	}	else if (datoABuscar < raiz -> dato) {
 
-		return buscar(raiz->hijoIzquierdo, datoABuscar);
+		return buscar(raiz -> hijoIzquierdo, datoABuscar);
 	} else{
 
-		return buscar(raiz->hijoDerecho, datoABuscar);
+		return buscar(raiz -> hijoDerecho, datoABuscar);
 	}
 }
 
-void PreOrden(struct avl *raiz)
+void mostrar (struct AVL *raiz)
 {
-	printf("%d\n",raiz -> dato);
-	PreOrden(raiz -> hijoIzquierdo);
-	PreOrden(raiz -> hijoDerecho);
-}
+  if (raiz == NULL)
+    {
+      return;
+    }
 
-
-void InOrden(struct avl *raiz)
-{
-	InOrden(raiz -> hijoIzquierdo);
-	printf("%d\n",raiz -> dato);
-	InOrden(raiz -> hijoDerecho);
-}
-
-void PostOrden(struct avl *raiz)
-{
-	PostOrden(raiz -> hijoIzquierdo);
-	printf("%d\n",raiz -> dato);
-	PostOrden(raiz -> hijoDerecho);
+  mostrar (raiz -> hijoIzquierdo);
+  printf ("%d\n", raiz -> dato);
+  mostrar (raiz -> hijoDerecho);
 }

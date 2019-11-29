@@ -4,23 +4,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct avl{
+struct AVL{
 
 	int dato;
 	int fe;
-	struct avl *hijoDerecho;
-	struct avl *hijoIzquierdo;
+	struct AVL *hijoDerecho;
+	struct AVL *hijoIzquierdo;
 };
 
-struct avl* insertar();
-struct avl* rotacionDerecha();
-struct avl* rotacionIzquierda();
-int calcularAltura();
-int calcularFE();
-int buscar();
-
-void PreOrden(struct avl *);
-void InOrden(struct avl *);
-void PostOrden(struct avl *);
+struct AVL *insertar(struct AVL*, int);
+struct AVL *rotacionDerecha(struct AVL *);
+struct AVL *rotacionIzquierda(struct AVL *);
+int calcularAltura(struct AVL *);
+int calcularFB(struct AVL *);
+int buscar(struct AVL *, int);
+void mostrar (struct AVL *);
 
 #endif
